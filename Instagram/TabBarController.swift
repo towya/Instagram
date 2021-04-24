@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
@@ -20,19 +21,27 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
     }
     
-    // タブバーのアイコンがタップされた時に呼ばれるdelegateメソッドを処理する。
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if viewController is ImageSelectViewController {
-            // ImageSelectViewControllerは、タブ切り替えではなくモーダル画面遷移する
-            let imageSelectViewController = storyboard!.instantiateViewController(withIdentifier: "ImageSelect")
-            present(imageSelectViewController, animated: true)
-            return false
-        } else {
-            // その他のViewControllerは通常のタブ切り替えを実施
-            return true
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // currentUserがnilならログインしていない
+        if Auth.auth().currentUser == nil {
+            // ログインしていないときの処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)        }
+        
+        // タブバーのアイコンがタップされた時に呼ばれるdelegateメソッドを処理する。
+        func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+            if viewController is ImageSelectViewController {
+                // ImageSelectViewControllerは、タブ切り替えではなくモーダル画面遷移する
+                let imageSelectViewController = storyboard!.instantiateViewController(withIdentifier: "ImageSelect")
+                present(imageSelectViewController, animated: true)
+                return false
+            } else {
+                // その他のViewControllerは通常のタブ切り替えを実施
+                return true
+            }
         }
     }
-    
     
     /*
      // MARK: - Navigation
