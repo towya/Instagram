@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20985DC1264220560058105F /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20985DC0264220560058105F /* CommentViewController.swift */; };
+		20985DC7264297EF0058105F /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20985DC6264297EF0058105F /* PlaceHolderTextView.swift */; };
 		209862E92635C2900017F66B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209862E82635C2900017F66B /* Const.swift */; };
 		209862ED26387D260017F66B /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209862EC26387D260017F66B /* PostData.swift */; };
 		209862F126387F290017F66B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209862EF26387F290017F66B /* PostTableViewCell.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		1ECF8FA13A80069443BBE31A /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
+		20985DC0264220560058105F /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		20985DC6264297EF0058105F /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		209862E82635C2900017F66B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		209862EC26387D260017F66B /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		209862EF26387F290017F66B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,21 +89,23 @@
 			children = (
 				20AF78F0262DB5A100CD3531 /* AppDelegate.swift */,
 				20AF78F2262DB5A100CD3531 /* SceneDelegate.swift */,
+				20AF78F6262DB5A100CD3531 /* Main.storyboard */,
+				20AF79222630B24B00CD3531 /* TabBarController.swift */,
 				20AF791E2630A59600CD3531 /* SettingViewController.swift */,
 				20AF791B2630A55F00CD3531 /* PostViewController.swift */,
 				20AF79182630A54A00CD3531 /* ImageSelectViewController.swift */,
-				20AF79152630A51800CD3531 /* HomeViewController.swift */,
 				20AF79122630A50400CD3531 /* LoginViewController.swift */,
-				20AF78F6262DB5A100CD3531 /* Main.storyboard */,
-				20AF78F9262DB5A300CD3531 /* Assets.xcassets */,
-				20AF78FB262DB5A300CD3531 /* LaunchScreen.storyboard */,
-				20AF78FE262DB5A300CD3531 /* Info.plist */,
-				20AF79222630B24B00CD3531 /* TabBarController.swift */,
-				20AF79252631F1F400CD3531 /* GoogleService-Info.plist */,
-				209862E82635C2900017F66B /* Const.swift */,
+				20AF79152630A51800CD3531 /* HomeViewController.swift */,
+				20985DC0264220560058105F /* CommentViewController.swift */,
+				20985DC6264297EF0058105F /* PlaceHolderTextView.swift */,
 				209862EC26387D260017F66B /* PostData.swift */,
 				209862EF26387F290017F66B /* PostTableViewCell.swift */,
 				209862F026387F290017F66B /* PostTableViewCell.xib */,
+				20AF78F9262DB5A300CD3531 /* Assets.xcassets */,
+				20AF78FB262DB5A300CD3531 /* LaunchScreen.storyboard */,
+				20AF78FE262DB5A300CD3531 /* Info.plist */,
+				20AF79252631F1F400CD3531 /* GoogleService-Info.plist */,
+				209862E82635C2900017F66B /* Const.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -242,9 +248,11 @@
 				20AF79162630A51800CD3531 /* HomeViewController.swift in Sources */,
 				20AF791C2630A55F00CD3531 /* PostViewController.swift in Sources */,
 				209862F126387F290017F66B /* PostTableViewCell.swift in Sources */,
+				20985DC7264297EF0058105F /* PlaceHolderTextView.swift in Sources */,
 				20AF791F2630A59600CD3531 /* SettingViewController.swift in Sources */,
 				209862ED26387D260017F66B /* PostData.swift in Sources */,
 				20AF79132630A50400CD3531 /* LoginViewController.swift in Sources */,
+				20985DC1264220560058105F /* CommentViewController.swift in Sources */,
 				20AF78F1262DB5A100CD3531 /* AppDelegate.swift in Sources */,
 				209862E92635C2900017F66B /* Const.swift in Sources */,
 				20AF78F3262DB5A100CD3531 /* SceneDelegate.swift in Sources */,

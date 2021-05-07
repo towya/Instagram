@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // 投稿データを格納する配列
     var postArray: [PostData] = []
-    
+
     var listener: ListenerRegistration?
     
     override func viewDidLoad() {
@@ -70,8 +70,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
-        
+        cell.commentButton.addTarget(self, action: #selector(CommentButton(_:forEvent:)), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func CommentButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: commentボタンがタップされました。")
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        let commentViewController = storyboard!.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        commentViewController.x = postData
+        present(commentViewController, animated: true)
+        
+       // let commenterName = Auth.auth().currentUser!.displayName
+       // var updateValue: FieldValue
+        
     }
     
     // セル内のボタンがタップされた時に呼ばれるメソッド
