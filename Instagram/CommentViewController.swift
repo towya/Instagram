@@ -12,15 +12,15 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var textView: PlaceHolderTextView!
     
     // 投稿データを格納する配列
-    //var postArray: [PostData] = []
+    var postArray: [PostData] = []
     var x: PostData!
     
     @IBAction func postButton(_ sender: Any) {
         
         let commentText = textView.text!
-        let commenterName = Auth.auth().currentUser!.displayName
-        let commenter = "\(commenterName) : \(commentText)"
-        let updateValue = FieldValue.arrayUnion([commenter])
+        let commenterName = Auth.auth().currentUser!.displayName!
+        let comment = "\(commenterName) : \(commentText)"
+        let updateValue = FieldValue.arrayUnion([comment])
         let Postdata = x
         let postRef = Firestore.firestore().collection(Const.PostPath).document(Postdata!.id )
         postRef.updateData(["comments": updateValue])

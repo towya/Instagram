@@ -39,8 +39,12 @@ class PostTableViewCell: UITableViewCell {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         //コメントの表示
-        self.commenterLabel.text = "\(postData.comments)"
-        
+        var comments = ""
+        for comment in postData.comments{
+            comments += comment + "\n"
+        }
+        self.commenterLabel.text = comments
+
         //コメントボタンの表示
         let buttonImage = UIImage(named: "comment")
         self.commentButton.setImage(buttonImage, for: .normal)
